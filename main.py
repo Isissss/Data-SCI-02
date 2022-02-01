@@ -26,29 +26,33 @@ GPIO.setup(24,GPIO.OUT)
 
 
 def measure():
-    while True:
+    try:
+        while True:
         # Define humidity and temperature variables
-        humidity, temperature = dht.read(DHT_SENSOR, DHT_PIN)
-        if humidity is not None and temperature is not None and humidity < 100:
-            # Light up the LED status indicator based on humidity value
-            status = indicator(humidity); 
-            temperature_f = temperature * 9 / 5 + 32;
+            humidity, temperature = dht.read(DHT_SENSOR, DHT_PIN)
+            if humidity is not None and temperature is not None and humidity < 100:
+                # Light up the LED status indicator based on humidity value
+                status = indicator(humidity); 
+                temperature_f = temperature * 9 / 5 + 32;
             
-            queries = {'api_key': api_key,'field2': humidity, 'field3' : temperature, 'field6' : status, 'field5' : temperature_f}
-            r = requests.get(url, params=queries)
-            print ("Temperature(C) = {0:0.1f}C  Humidity = {1:0.1f}% Temperature(F)= {2:0.1f}F ".format(temperature, humidity, temperature_f))
-            # Print result. If failed, result will return 0
-            print ("Result: ", r.text)
-            # White LED to indicate it's succesfully measuring, 15s wait time due to restrictions of ThingSpeak free account
-            GPIO.output(18,GPIO.HIGH);
-            time.sleep(15)
-        else:
-           print ("Sensor error!")
-           GPIO.output(18,GPIO.LOW);
-           time.sleep(3)
-                
+                queries = {'api_key': api_key,'field2': humidity, 'field3' : temperature, 'field6' : status, 'field5' : temperature_f}
+                r = requests.get(url, params=queries)
+                print ("Temperature(C) = {0:0.1f}C  Humidity = {1:0.1f}% Temperature(F)= {2:0.1f}F ".format(temperature, humidity, temperature_f))
+                # Print result. If failed, result will return 0
+                print ("Result: ", r.text)
+                # White LED to indicate it's succesfully measuring, 15s wait time due to restrictions of ThingSpeak free account
+                GPIO.output(18,GPIO.HIGH);
+                time.sleep(15)
+            else:
+                print ("Sensor error!")
+                GPIO.output(18,GPIO.LOW);
+                time.sleep(3)
+    except KeyboardInterrupt:
+        # If script is stopped, reset LEDs
+        GPIO.cleanup()    
+                        
 def indicator(humidity): 
-    if humidity is not None:
+    if humidity is not None and humidity < 100:
         # Bad status
         if humidity > 45.0:
           status = 3
