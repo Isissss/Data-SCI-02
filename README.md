@@ -43,7 +43,7 @@ A (free) ThingSpeak channel is also needed with the following fields:
 - Temperature (in F, calculation based on the temperature in C)
 - Humidity (In %, measured by the DHT11)
 
-### The proces 
+### The process
 The prototype in its current form is not impressive. I spent most time figuring out the code so it doesn't have a proper case or anything like that. It is just a bunch of wires connected to some LEDs and the GPIO pins of the Pi. 
 <img src="images/setup.jpg"/>
 I started with a simple project, trying to light a LED using the GPIO pins and a script. I used an article which also showed me how to set it up which was really helpful. The code for that is in the `test_LED.py` file.
