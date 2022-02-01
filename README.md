@@ -11,7 +11,7 @@ For this new idea, I was inspired by my 11-year-old sister, or actually by her a
 I have set some personal goals for this project, and ofcourse the end-goal of this project.
 
 #### Project
-I want to show the status of the humidity and temperature through a simple device with LEDs as output to show the status of the humidity %. The information should be tracked and saved. It should then be used on an external website, which provides the a daily, weekly and monthly report of the avarage temperature and humidity. That way you can spot trends (let's say the humidity is much higer on a certain day, you can increase the ventilation beforehand) but also assure people that the humidity and temperature is healthy to work in. Moreover, the reports could also show a relation between the temperature and the humidity, and show what temperatures are the best to work in to make sure the humidity is good. 
+I want to show the status of the humidity and temperature through a simple device with LEDs as output to show the status of the humidity %. The information should be tracked and saved. It should then be used on an external website panel, which provides the a daily, weekly and monthly report of the avarage temperature and humidity. That way you can spot trends (let's say the humidity is much higer on a certain day, you can increase the ventilation beforehand) but also assure people that the humidity and temperature is healthy to work in. Moreover, the reports could also show a relation between the temperature and the humidity, and show what temperatures are the best to work in to make sure the humidity is good. 
 
 The collected data is the humidity level, the temperature in Celcius (through the DHT11), temperature in Fahrenheid (based on the temperature in C from the DHT11) and the status the status (1 = good 2 = indication of it getting worse 3 = bad)
 
@@ -66,8 +66,8 @@ Putting everything together went pretty smoothly to be honest, I was really happ
 <img src="https://i.imgur.com/MM8uHwf.png"> Here are the charts shown of the data. 
 ### <a href="https://youtu.be/Vzg6vLiX4uQ">YOUTUBE: DEMO WORKING PROTOTYPE </a>  
 
-The last part of the pipeline is to send the ThingSpeak data to a website. I did this with Javascript and HTML. It is not very complicated right now, it simply shows a daily report with the averages per hour. Async functions are still a bit complicated for me so I was not able to really figure out how to change the parameters without creating a lot of files of the same script but with a different url. I hope to create options in the future where you can select different timeframes etc. A daily report won't be enough to get insights but once there are enough datapoints we can create monthly reports and charts to get a better picture, as well as seeing the correlation of the temperature and humidity. I also hope to get rid of the 'null' values someday, I was not able to figure that out unfortunately, but that's also due to the fact that the channel is new and that the device didn't run at night. The script I used for the API call is in `script.js`
- <img src="https://i.imgur.com/PnwoTHa.png"> <a href="https://isissss.github.io/Data-SCI-02/">Github pages - Website</a>  
+The last part of the pipeline is to send the ThingSpeak data to a web panel. I did this with Javascript and HTML. It is not very complicated right now, it simply shows a daily report with the averages per hour. Async functions are still a bit complicated for me so I was not able to really figure out how to change the parameters without creating a lot of files of the same script but with a different url. I hope to create options in the future where you can select different timeframes etc. A daily report won't be enough to get insights but once there are enough datapoints we can create monthly reports and charts to get a better picture, as well as seeing the correlation of the temperature and humidity. I also hope to get rid of the 'null' values someday, I was not able to figure that out unfortunately, but that's also due to the fact that the channel is new and that the device didn't run at night. The script I used for the API call is in `script.js`
+ <img src="https://i.imgur.com/PnwoTHa.png"> <a href="https://isissss.github.io/Data-SCI-02/">Github pages - Web panel</a>  
  
 ### What's next?
 This project was a lot harder than I expected but I am pretty proud of the result. It may not be impressive yet but I already have ideas about expanding this. I would like to add
@@ -76,7 +76,7 @@ This project was a lot harder than I expected but I am pretty proud of the resul
 - Linking this to external devices so that the temperature can be regulated based on the data measured by this device, as well as the ventilation
 
 ### Sources
-During this project I've used several website and sources to create my code. I have gathered information from:
+During this project I've used several websites and sources to create my code. I have gathered information from:
 - <a href="https://docs.python-requests.org/en/master/user/quickstart/">Requests Python docs</a>
 - <a href="https://www.raspberrypi-spy.co.uk/2017/09/dht11-temperature-and-humidity-sensor-raspberry-pi/">DHT11 Temperature and Humidity Sensor and the Raspberry Pi</a>
 - <a href="https://nl.mathworks.com/help/thingspeak/writedata.html;jsessionid=57ca7fb5ff69ea6dab8a95847248">Mathworks ThingSpeak writedata documentation</a>
