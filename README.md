@@ -44,7 +44,7 @@ A (free) ThingSpeak channel is also needed with the following fields:
 
 ### The proces 
 The prototype in its current form is not impressive. I spent most time figuring out the code so it doesn't have a proper case or anything like that. It is just a bunch of wires connected to some LEDs and the GPIO pins of the Pi. 
-<img src="images/setup.jpeg"/>
+<img src="images/setup.jpg"/>
 I started with a simple project, trying to light a LED using the GPIO pins and a script. I used an article which also showed me how to set it up which was really helpful. The code for that is in the `test_LED.py` file.
 There is one jumpwire going from the GPIO pin to the breadboard, then there is a resistor in the circuit to prevent the LED from exploding/breaking. There is one more wire which goes from the ground to the top left of the board, this one is being used by all LEDs. This is possible because all the outer lines are connected vertically, while all the inner points are connected horizentally. 
 <img src="images/LEDs.jpeg"/>
