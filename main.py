@@ -54,21 +54,21 @@ def measure():
 def indicator(humidity): 
     if humidity is not None and humidity < 100:
         # Bad status
-        if humidity > 45.0:
+        if humidity > 70.0 or humidity < 30:
           status = 3
           GPIO.output(24,GPIO.HIGH);
           GPIO.output(23,GPIO.LOW);
           GPIO.output(21,GPIO.LOW);
           return status
         # Orange value 
-        elif humidity > 35.0:  
+        elif humidity > 60.0:  
           status = 2
           GPIO.output(23,GPIO.HIGH);
           GPIO.output(21,GPIO.LOW);
           GPIO.output(24,GPIO.LOW);
           return status
         # Good status
-        elif humidity > 31.0:
+        elif humidity > 30.0:
           status = 1
           GPIO.output(21,GPIO.HIGH);
           GPIO.output(23,GPIO.LOW);
