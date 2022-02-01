@@ -1,5 +1,5 @@
 # Data science for IOT 
-Data Science for Internet of Things - Keuzevak HR periode 2, 2022
+Data Science for Internet of Things - Keuzevak HR periode 2, 2022 <br>
 Isis Ton 1036029
 
 ### The idea 
