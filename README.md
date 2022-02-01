@@ -47,8 +47,8 @@ A (free) ThingSpeak channel is also needed with the following fields:
 The prototype in its current form is not impressive. I spent most time figuring out the code so it doesn't have a proper case or anything like that. It is just a bunch of wires connected to some LEDs and the GPIO pins of the Pi. 
 <img src="images/setup.jpg"/>
 I started with a simple project, trying to light a LED using the GPIO pins and a script. I used an article which also showed me how to set it up which was really helpful. The code for that is in the `test_LED.py` file.
-There is one jumpwire going from the GPIO pin to the breadboard, then there is a resistor in the circuit to prevent the LED from exploding/breaking. There is one more wire which goes from the ground to the top left of the board, this one is being used by all LEDs. This is possible because all the outer lines are connected vertically, while all the inner points are connected horizentally. 
-<img src="images/LEDs.jpeg"/>
+There is one jumpwire going from the GPIO pin to the breadboard, then there is a resistor in the circuit to prevent the LED from exploding/breaking. There is one more wire which goes from the ground to the top left of the board, this one is being used by all LEDs. This is possible because all the outer lines are connected vertically, while all the inner points are connected horizontally.  
+<img src="images/LEDs.jpeg"/> <a href="https://imgur.com/a/7atzPmi">Small demo of this test</a>
 
  It went alright, I felt confident going onto the next step after this, working with the sensor. <br><br>
 <img src="images/sensor.jpg"/>
@@ -56,7 +56,7 @@ I had done research about the sensor and how to set it up, and it went smoothly.
 The middle wire goes to the 3.3V (always on power), the right one to the ground and the left one goes to the GPIO pin.
 
 ``dhtDevice = adafruit_dht.DHT11(board.D13)``
-The code itself worked fine, but I stumbled accross an error that had to do with this line. After stopping the script and re-running it, it would tell me 'unable to set line 13 to input' until I completely rebooted the Pi. I searched on Google and saw that it was a known issue. People recommended other libraries so I digged into that and looked for other examples. When I found that, I changed the code and the issue was gone. The code of this is in `test_measure.py`. 
+The code itself worked fine, but I stumbled accross an error that had to do with this line. After stopping the script and re-running it, it would tell me 'unable to set line 13 to input' until I completely rebooted the Pi. I searched on Google and saw that it was a known issue. People recommended other libraries so I digged into that and looked for other examples. When I found that, I changed the code and the issue was gone. It wasn't much different to be fair, it was just a different way of initializing the sensor with the pin. The code of this is in `test_measure.py`. 
 
 Then onto the next step, enabling the LED based on the humidity level. The else if statement was a bit different than what I was used to, so I had to google how to write that down. After that it went solid. I did come across another issue of the LEDs not disabling when the script was stopped. I did have a `GPIO.cleanup() ` in there, but ofcourse, if the script is stopped, it can never reach it. I Googled online and saw the 'try, except' which I used in my script to disable the LEDs upon keyboard interruption (CTRL+C). I implemented this in my `main.py` on line 50. 
 
