@@ -50,7 +50,7 @@ There is one jumpwire going from the GPIO pin to the breadboard, then there is a
 <img src="images/LEDs.jpeg"/>
 
  It went alright, I felt confident going onto the next step after this, working with the sensor. <br><br>
-<img src="images/sensor.jpeg"/>
+<img src="images/sensor.jpg"/>
 I had done research about the sensor and how to set it up, and it went smoothly. At first I decided to test the sensor without the LEDs and ThingSpeak involved. 
 The middle wire goes to the 3.3V (always on power), the right one to the ground and the left one goes to the GPIO pin.
 
