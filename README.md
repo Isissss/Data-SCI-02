@@ -27,7 +27,7 @@ I hope to expand my knowledge and get comfortable with the basics of Python so I
 
 ### The set-up & pipeline
 The data pipeline for this project:
-<img src="images/Pipeline.jpeg"/>
+<img src="images/Pipeline.jpg"/>
 
 Hardware used for the project (requirements):
 - Raspberry Pi 3 or newer
