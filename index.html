@@ -1,7 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"/>
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css"/>
+    <title>Document</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1642875/charts/2?bgcolor=%23ffffff&color=%23d62020&days=3&dynamic=true&results=1000&title=Luchtvochtigheid&type=line"></iframe></p>
+
+<!-- Here a loader is created which
+     loads till response comes -->
+<div class="d-flex justify-content-center">
+    <div class="spinner-border"
+         role="status" id="loading">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<h1>Daily Report</h1>
+<!-- table for showing data -->
+<table id="data"></table>
+<p>
+    Temperature & Humidity NOW <br>
+    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1642875/widgets/415241"></iframe>
+
+    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1642875/widgets/415242"></iframe>
+</p>
+<script src="test.js"></script>
 </body>
 </html>
