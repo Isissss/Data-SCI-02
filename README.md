@@ -6,6 +6,7 @@ Originally, I wanted to make a diary bot that takes pictures and log your emotio
 
 I started thinking about what else I could do, and started thinking about school and work. A healthy environment is a must while you are at work or school (or just at home). Not just because of covid, but it's important at any time. The room temperature and humidity play a part in that. A high humidity percentage stimulates the growth of micro-organisms. This can lead to allergic reactions and problems such as tightness of the chest, headaches, coughing and a chronical nose cold, which all has a negative effect on your overall workflow. These are all issues that will only show up after some time, but concenstration issues can occur right away. 
 
+##### Inspiation
 I was inspired by my 11-year-old sister, or actually by her assignment about the air / masks at school during covid. 
 
 ## Goal of the project
@@ -21,4 +22,9 @@ The collected data is the humidity level, the temperature in Celcius (through th
 The data is then sent to ThingSpeak, which saves it so it can be used by the web application through the API for the reports. 
 
 #### Personal
-I am completely new to Python and the Raspberry in general. When I just started my studies (CMGT) I made an IoT device, so I have some experience in that field. I made a 'vergeet-me-niet' madicine reminder for eldery coded in a beginner's coding program called 
+##### Experience
+When I just started my studies (CMGT) I made an IoT device, so I have some knowledge of IoT. I made a 'vergeet-me-niet' madicine reminder for eldery coded in a beginner's coding program called 'MakeCode' a simplified application that uses Javascript as programming language. 
+
+In the second period of this year, we had to build our own reservation system. I learnt how to make post and get requests, which I could use in this project as well to update the channels and to retrieve information from TeamSpeak. 
+
+I hope to expand my knowledge and get comfortable with Python and the hardware
