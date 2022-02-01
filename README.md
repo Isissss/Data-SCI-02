@@ -62,10 +62,18 @@ Then onto the next step, enabling the LED based on the humidity level. The else 
 Then the hardest part, sending the data to ThingSpeak. At first, I was using a script that was not competible with the Python that we are on right now due to the outdated libraries, so I had to find something else.  After looking online I came accross the Requests Python docs and the mathlab ones about writing data to a channel.  I found an example and took inspiration from it, but changed the updates to single updates to make things easier for myself. It finally worked, and it was such a relieve.  
  <a href="https://thingspeak.com/channels/1642875">ThingSpeak Channel</a>  
 Putting everything together went pretty smoothly to be honest, I was really happy when everything worked. 
-
+<img src="https://i.imgur.com/MM8uHwf.png"> Here are the charts shown of the data. 
 ### <a href="https://youtu.be/Vzg6vLiX4uQ">YOUTUBE: DEMO WORKING PROTOTYPE </a>  
 
-To 
+The last part of the pipeline is to send the ThingSpeak data to a website. I did this with Javascript and HTML. It is not very complicated right now, it simply shows a daily report with the averages per hour. Async functions are still a bit complicated for me so I was not able to really figure out how to change the parameters without creating a lot of files of the same script but with a different url. I hope to create options in the future where you can select different timeframes etc. A daily report won't be enough to get insights but once there are enough datapoints we can create monthly reports and charts to get a better picture, as well as seeing the correlation of the temperature and humidity. I also hope to get rid of the 'null' values someday, I was not able to figure that out unfortunately, but that's also due to the fact that the channel is new and that the device didn't run at night. The script I used for the API call is in `script.js`
+ <img src="https://i.imgur.com/PnwoTHa.png"> <a href="https://isissss.github.io/Data-SCI-02/">Github pages - Website</a>  
+ 
+### What's next?
+This project was a lot harder than I expected but I am pretty proud of the result. It may not be impressive yet but I already have ideas about expanding this. I would like to add
+- Notifications when it's  turning red. With messages such as 'these circumstances aren't great to work in. If you haven't opened a window yet, you may want to do that and go for a walk to get fresh air.'
+- More options in the panel, such as selecting timeframes
+- Linking this to external devices so that the temperature can be regulated based on the data measured by this device, as well as the ventilation
+
 ### Sources
 During this project I've used several website and sources to create my code. I have gathered information from:
 - <a href="https://docs.python-requests.org/en/master/user/quickstart/">Requests Python docs</a>
