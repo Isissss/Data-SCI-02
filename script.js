@@ -16,17 +16,18 @@ const api_url =
         show(data);
     }
 
-// Calling that async function
+// This is to call the function
     getapi(api_url);
 
-// Function to hide the loader
+// Function to hide the loading text
     function hideloader() {
         document.getElementById('loading').style.display = 'none';
     }
 
+// Function to format the time in a normal string instead of the ISO format
     function getTime(e) {
-        d =new Date(e);
-        d = d.toLocaleString('en-US', {
+        time =new Date(e);
+        time = time.toLocaleString('en-US', {
             weekday: 'short', // long, short, narrow
             day: 'numeric', // numeric, 2-digit
             year: 'numeric', // numeric, 2-digit
@@ -47,11 +48,11 @@ const api_url =
           <th>Temperature C</th>
           <th>Temperature F</th>
           </tr>`;
-
+// Loop through the feeds array 
         for (let i of data.feeds) {
             getTime(i.created_at)
             tab += `<tr> 
-          <td>${d}</td>
+          <td>${time}</td>
           <td>${i.field2}%</td>
           <td>${i.field3}º</td>
           <td>${i.field5}F</td>
