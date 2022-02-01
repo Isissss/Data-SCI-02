@@ -1,5 +1,5 @@
 # Data science for IOT 
-Data Science IOT - Keuzevak HR periode 2, 2022
+Data Science for Internet of Things - Keuzevak HR periode 2, 2022
 
 ### The idea 
 Originally, I wanted to make a diary bot that takes pictures and logs your emotions while you are telling the bot a story about your day to get more insight on your mental health because I think that is very important especially during covid and the things you head about the mental state of young adults nowadays. After doing some research online, I sadly came to the conclusion that this was too complicated with my level of experience and the time we were given for this project. Although I have some IoT experience, I am relatively new to coding and had no experience with the language and device provided to us, the camera module and the Google cloud needd for this project seemed a it too complicated for what was asked from us.
