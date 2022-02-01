@@ -60,10 +60,12 @@ The code itself worked fine, but I stumbled accross an error that had to do with
 Then onto the next step, enabling the LED based on the humidity level. The else if statement was a bit different than what I was used to, so I had to google how to write that down. After that it went solid. I did come across another issue of the LEDs not disabling when the script was stopped. I did have a `GPIO.cleanup() ` in there, but ofcourse, if the script is stopped, it can never reach it. I Googled online and saw the 'try, except' which I used in my script to disable the LEDs upon keyboard interruption (CTRL+C). I implemented this in my `main.py` on line 50. 
 
 Then the hardest part, sending the data to ThingSpeak. At first, I was using a script that was not competible with the Python that we are on right now due to the outdated libraries, so I had to find something else.  After looking online I came accross the Requests Python docs and the mathlab ones about writing data to a channel.  I found an example and took inspiration from it, but changed the updates to single updates to make things easier for myself. It finally worked, and it was such a relieve.  
-
+ <a href="https://thingspeak.com/channels/1642875">ThingSpeak Channel</a>  
 Putting everything together went pretty smoothly to be honest, I was really happy when everything worked. 
 
+### <a href="https://youtu.be/Vzg6vLiX4uQ">YOUTUBE: DEMO WORKING PROTOTYPE </a>  
 
+To 
 ### Sources
 During this project I've used several website and sources to create my code. I have gathered information from:
 - <a href="https://docs.python-requests.org/en/master/user/quickstart/">Requests Python docs</a>
