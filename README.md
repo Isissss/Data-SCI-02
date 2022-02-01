@@ -59,7 +59,7 @@ I had done research about the sensor and how to set it up, and it went smoothly.
 import board
 import adafruit_dht
 
-# Initialize the sensor with  GPIO pin 13:
+#Initialize the sensor with  GPIO pin 13:
 dhtDevice = adafruit_dht.DHT11(board.D13) `
 
 The code itself worked fine, but I stumbled accross an error that had to do with this line. After stopping the script and re-running it, it would tell me 'unable to set line 13 to input' until I completely rebooted the Pi. I searched on Google and saw that it was a known issue. People recommended other libraries so I digged into that and looked for other examples. When I found that, I changed the code and the issue was gone. The code of this is in test_measure.py  
