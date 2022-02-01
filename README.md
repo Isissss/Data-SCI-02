@@ -70,7 +70,7 @@ The last part of the pipeline is to send the ThingSpeak data to a website. I did
  
 ### What's next?
 This project was a lot harder than I expected but I am pretty proud of the result. It may not be impressive yet but I already have ideas about expanding this. I would like to add
-- Notifications when it's  turning red. With messages such as 'these circumstances aren't great to work in. If you haven't opened a window yet, you may want to do that and go for a walk to get fresh air.'
+- Notifications when the values are hitting red. With messages such as 'these circumstances aren't great to work in. If you haven't opened a window yet, you may want to do that and go for a walk to get fresh air.'
 - More options in the panel, such as selecting timeframes
 - Linking this to external devices so that the temperature can be regulated based on the data measured by this device, as well as the ventilation
 
