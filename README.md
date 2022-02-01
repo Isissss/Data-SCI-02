@@ -23,18 +23,11 @@ Prior experiences
 
 I hope to expand my knowledge and get comfortable with the basics of Python so I can start bigger projects like a Discord bot that can help me pick and send predefined replies at my work, as well as counting the amount of tickets I do per day and hour. I work at a Minecraft server's customer service and tickets are done through Discord. Ofcourse a healthy work environment is also important for myself, so I hope to benefit from this device as well. 
 
-### Sources
-During this project I've used several website and sources to create my code. I have gathered information from:
-- <a href="https://docs.python-requests.org/en/master/user/quickstart/">Requests Python docs</a>
-- <a href="https://www.raspberrypi-spy.co.uk/2017/09/dht11-temperature-and-humidity-sensor-raspberry-pi/">DHT11 Temperature and Humidity Sensor and the Raspberry Pi</a>
-- <a href="https://nl.mathworks.com/help/thingspeak/writedata.html;jsessionid=57ca7fb5ff69ea6dab8a95847248">Mathworks ThingSpeak writedata documentation</a>
-- <a href="https://nl.mathworks.com/help/thingspeak/readdata.html;jsessionid=57ca8759e47f248719045080ec55">Mathworks ThingSpeak readdata documentation</a> 
-- <a href="https://roboticsbackend.com/raspberry-pi-control-led-python-3/">Control an LED with Raspberry Pi 4 and Python 3</a> 
 ## The Project
 
 ### The set-up & pipeline
 The data pipeline for this project:
-<img src="Pipeline.jpeg"/>
+<img src="images/Pipeline.jpeg"/>
 
 Hardware used for the project (requirements):
 - Raspberry Pi 3 or newer
@@ -51,15 +44,30 @@ A (free) ThingSpeak channel is also needed with the following fields:
 
 ### The proces 
 The prototype in its current form is not impressive. I spent most time figuring out the code so it doesn't have a proper case or anything like that. It is just a bunch of wires connected to some LEDs and the GPIO pins of the Pi. 
+<img src="images/setup.jpeg"/>
+I started with a simple project, trying to light a LED using the GPIO pins and a script. I used an article which also showed me how to set it up which was really helpful. The code for that is in the `test_LED.py` file.
+There is one jumpwire going from the GPIO pin to the breadboard, then there is a resistor in the circuit to prevent the LED from exploding/breaking. There is one more wire which goes from the ground to the top left of the board, this one is being used by all LEDs. This is possible because all the outer lines are connected vertically, while all the inner points are connected horizentally. 
+<img src="images/LEDs.jpeg"/>
 
-I started with a simple project, trying to light a LED using the GPIO pins and a script. I used an article which also showed me how to set it up which was really helpful. The code for that is in the test_LED.py file. It went alright, I felt confident going onto the next step after this, working with the sensor.
-
+ It went alright, I felt confident going onto the next step after this, working with the sensor. <br><br>
+<img src="images/sensor.jpeg"/>
 I had done research about the sensor and how to set it up, and it went smoothly. At first I decided to test the sensor without the LEDs and ThingSpeak involved. 
-`import time
-import board
-import adafruit_dht
+The middle wire goes to the 3.3V (always on power), the right one to the ground and the left one goes to the GPIO pin.
 
-#Initialize the sensor with  GPIO pin 13:
-dhtDevice = adafruit_dht.DHT11(board.D13) `
+``dhtDevice = adafruit_dht.DHT11(board.D13)``
+The code itself worked fine, but I stumbled accross an error that had to do with this line. After stopping the script and re-running it, it would tell me 'unable to set line 13 to input' until I completely rebooted the Pi. I searched on Google and saw that it was a known issue. People recommended other libraries so I digged into that and looked for other examples. When I found that, I changed the code and the issue was gone. The code of this is in `test_measure.py`. 
 
-The code itself worked fine, but I stumbled accross an error that had to do with this line. After stopping the script and re-running it, it would tell me 'unable to set line 13 to input' until I completely rebooted the Pi. I searched on Google and saw that it was a known issue. People recommended other libraries so I digged into that and looked for other examples. When I found that, I changed the code and the issue was gone. The code of this is in test_measure.py  
+Then onto the next step, enabling the LED based on the humidity level. The else if statement was a bit different than what I was used to, so I had to google how to write that down. After that it went solid. I did come across another issue of the LEDs not disabling when the script was stopped. I did have a `GPIO.cleanup() ` in there, but ofcourse, if the script is stopped, it can never reach it. I Googled online and saw the 'try, except' which I used in my script to disable the LEDs upon keyboard interruption (CTRL+C). I implemented this in my `main.py` on line 50. 
+
+Then the hardest part, sending the data to ThingSpeak. At first, I was using a script that was not competible with the Python that we are on right now due to the outdated libraries, so I had to find something else.  After looking online I came accross the Requests Python docs and the mathlab ones about writing data to a channel.  I found an example and took inspiration from it, but changed the updates to single updates to make things easier for myself. It finally worked, and it was such a relieve.  
+
+Putting everything together went pretty smoothly to be honest, I was really happy when everything worked. 
+
+
+### Sources
+During this project I've used several website and sources to create my code. I have gathered information from:
+- <a href="https://docs.python-requests.org/en/master/user/quickstart/">Requests Python docs</a>
+- <a href="https://www.raspberrypi-spy.co.uk/2017/09/dht11-temperature-and-humidity-sensor-raspberry-pi/">DHT11 Temperature and Humidity Sensor and the Raspberry Pi</a>
+- <a href="https://nl.mathworks.com/help/thingspeak/writedata.html;jsessionid=57ca7fb5ff69ea6dab8a95847248">Mathworks ThingSpeak writedata documentation</a>
+- <a href="https://nl.mathworks.com/help/thingspeak/readdata.html;jsessionid=57ca8759e47f248719045080ec55">Mathworks ThingSpeak readdata documentation</a> 
+- <a href="https://roboticsbackend.com/raspberry-pi-control-led-python-3/">Control an LED with Raspberry Pi 4 and Python 3</a> 
