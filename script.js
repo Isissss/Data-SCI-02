@@ -35,7 +35,8 @@ const api_url =
             hour: 'numeric', // numeric, 2-digit
             minute: 'numeric', // numeric, 2-digit
             second: 'numeric', // numeric, 2-digit
-            datestyle: 'medium'
+            datestyle: 'medium',
+            hourCycle: "h24",
         });
     }
 
