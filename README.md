@@ -2,7 +2,7 @@
 Data Science IOT - Keuzevak HR periode 2, 2022
 
 ## Idea 
-Originally, I wanted to make a diary bot that takes pictures and log your emotions while you are telling the bot a story about your day to get more insight on your mental health. After doing some research online, I sadly came to the conclusion that this was too complicated with my level of experience and the time we were given for this project. Although I have some IoT experience, I am relatively new to coding and had no experience with the language and device provided to us.
+Originally, I wanted to make a diary bot that takes pictures and logs your emotions while you are telling the bot a story about your day to get more insight on your mental health. After doing some research online, I sadly came to the conclusion that this was too complicated with my level of experience and the time we were given for this project. Although I have some IoT experience, I am relatively new to coding and had no experience with the language and device provided to us.
 
 INSPIRATION FOR THE CURRENT IDEA <br>
 I was inspired by my 11-year-old sister, or actually by her assignment about the air / masks at school during covid. A healthy environment is a must while you are at work or school (or just at home). Not just because of covid, but it's important at any time. The room temperature and humidity play a part in that. A high humidity percentage stimulates the growth of micro-organisms. Tihs can lead to various problems that all negatively affect your overall workflow. Some issues will occur overtime, but concenstration issues can occur right away which is why it's important to pay attention to the humidity.
