@@ -4,7 +4,7 @@ Data Science IOT - Keuzevak HR periode 2, 2022
 ## Idea 
 Originally, I wanted to make a diary bot that takes pictures and log your emotions while you are telling the bot a story about your day to get more insight on your mental health. After doing some research online, I sadly came to the conclusion that this was too complicated with my level of experience and the time we were given for this project. Although I have some IoT experience, I am relatively new to coding and had no experience with the language and device provided to us.
 
-INSPIRATION FOR THE CURRENT IDEA
+INSPIRATION FOR THE CURRENT IDEA <br>
 I was inspired by my 11-year-old sister, or actually by her assignment about the air / masks at school during covid. A healthy environment is a must while you are at work or school (or just at home). Not just because of covid, but it's important at any time. The room temperature and humidity play a part in that. A high humidity percentage stimulates the growth of micro-organisms. Tihs can lead to various problems that all negatively affect your overall workflow. Some issues will occur overtime, but concenstration issues can occur right away which is why it's important to pay attention to the humidity.
 
 ## Goal of the project
@@ -24,11 +24,12 @@ The data is then sent to ThingSpeak, which saves it so it can be used by the web
 
 #### Personal
 
-EXPERIENCE
+PRIOR EXPERIENCE <br>
 When I just started my studies (CMGT) I made an IoT device, so I have some knowledge of IoT. I made a 'vergeet-me-niet' madicine reminder for eldery coded in a beginner's coding program called 'MakeCode' a simplified application that uses Javascript as programming language. 
 
-In the second period of this year, we had to build our own reservation system. I learnt how to make post and get requests, which I could use in this project as well to update the channels and to retrieve information from TeamSpeak. 
+In the second period of this year, we had to build our own reservation system. I learnt how to make post and get requests through PHP, which I could use in this project as well to update the channels and to retrieve information from TeamSpeak.  
 
-I hope to expand my knowledge and get comfortable with Python so I can start bigger projects like a Discord bot that can help me pick and send predefined replies to an issue at my work. I work at a Minecraft server's customer service. 
+MY OWN GOALS <br>
+I hope to expand my knowledge and get comfortable with the basics of Python so I can start bigger projects like a Discord bot that can help me pick and send predefined replies at my work. I work at a Minecraft server's customer service and tickets are done through Discord. 
 
 
