@@ -69,8 +69,6 @@ Putting everything together went pretty smoothly to be honest, I was really happ
 The last part of the pipeline is to send the ThingSpeak data to a web panel. I did this with Javascript and HTML. It is not very complicated right now, it simply shows a daily report with the averages per hour. Async functions are still a bit complicated for me so I was not able to really figure out how to change the parameters without creating a lot of files of the same script but with a different url. I hope to create options in the future where you can select different timeframes etc. A daily report won't be enough to get insights but once there are enough datapoints we can create monthly reports and charts to get a better picture, as well as seeing the correlation of the temperature and humidity. I also hope to get rid of the 'null' values someday, I was not able to figure that out unfortunately, but that's also due to the fact that the channel is new and that the device didn't run at night. The script I used for the API call is in `script.js`
  <img src="https://i.imgur.com/PnwoTHa.png"> <a href="https://isissss.github.io/Data-SCI-02/">Github pages - Web panel</a>  
  
- ### <a href="https://youtu.be/Vzg6vLiX4uQ">YOUTUBE: DEMO WORKING PROTOTYPE </a>  
- 
 ### What's next?
 This project was a lot harder than I expected but I am pretty proud of the result. It may not be impressive yet but I already have ideas about expanding this. I would like to add
 - Notifications on an app on your smartphone when the values are hitting red. With messages such as 'these circumstances aren't great to work in. If you haven't opened a window yet, you may want to do that and go for a walk to get fresh air.'
